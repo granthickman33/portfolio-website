@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Grant Hickman - Product Manager Portfolio
 
-## Getting Started
+A personal portfolio website built with Next.js, Markdown/MDX, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Quick Start
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Open in browser:**
+   [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 📁 Project Structure
+
+```
+portfolio-website/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Homepage (highlights reel)
+│   ├── about/             # About page
+│   ├── case-studies/       # Case studies list + dynamic [slug] route
+│   ├── side-projects/     # Side projects page
+│   └── resume/            # Resume page
+├── components/            # Reusable React components
+│   ├── Navbar.tsx
+│   └── Footer.tsx
+├── content/               # MDX content files
+│   ├── case-studies/       # Case study .mdx files
+│   └── side-projects/     # Side project .mdx files
+├── tailwind.config.ts     # Tailwind CSS configuration
+└── public/              # Static assets (images, resume PDF)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✏️ Adding Content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Adding a New Case Study
 
-## Learn More
+1. Create a new `.mdx` file in `content/case-studies/`
+2. Add frontmatter at the top:
 
-To learn more about Next.js, take a look at the following resources:
+```markdown
+---
+title: "Your Case Study Title"
+summary: "A brief 1-sentence summary of the project outcome."
+tags: ["Strategy", "Vision"]  # Tags shown on the card
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## The Problem
+Your problem description here.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## The Opportunity
+Why this was worth solving...
 
-## Deploy on Vercel
+## My Process & What I Did
+Step-by-step breakdown...
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## The Solution
+What you built...
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Results & Impact
+Metrics and outcomes...
+```
+
+3. Save the file - it will automatically appear on the site.
+
+### Adding a New Side Project
+
+1. Create a new `.mdx` file in `content/side-projects/`
+2. Use the same frontmatter format
+3. Save - it will appear on the Side Projects page
+
+---
+
+## 🛠️ Deployment
+
+This project is set up for easy deployment to Vercel.
+
+1. Push your changes to GitHub
+2. Import the project in Vercel
+3. Vercel will automatically detect Next.js and deploy
+
+Every `git push` to `main` will trigger a new deployment.
+
+---
+
+## 🔧 Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS
+- **Content:** MDX (Markdown + JSX)
+- **Deployment:** Vercel
