@@ -28,8 +28,9 @@ async function getCaseStudy(slug: string) {
   return { content, frontmatter, slug };
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await getCaseStudy(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getCaseStudy(slug);
   if (!post) {
     return {
       title: 'Not Found',
@@ -40,8 +41,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function CaseStudyPage({ params }: { params: { slug: string } }) {
-  const post = await getCaseStudy(params.slug);
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getCaseStudy(slug);
 
   if (!post) {
     notFound();
